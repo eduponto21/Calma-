@@ -360,15 +360,20 @@ public class Cadastro extends javax.swing.JFrame {
             jOptionPaneAvisos.showMessageDialog(this, "Aceite os termos de uso!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
             return;
         }
-            
-        System.out.println(nome + telefone + idade + rg + cpf + tipo_sanguineo + medicacoes + condicoes_especiais + convenio + codigo + senha);
         Usuario user = new Usuario(nome, telefone, idade, cpf, rg, condicoes_especiais, medicacoes, tipo_sanguineo, senha, convenio, codigo);
         
+        //Se usuário já existir, erro
+        
+       
+        //Se usuário não exisitir, cadastrá-lo 
         try {
             Data.inserir_usuario(user);
         } catch (IOException ex) {
             Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        jOptionPaneAvisos.showMessageDialog(this, "Cadastro realizado com sucesso!", "Completo!", jOptionPaneAvisos.INFORMATION_MESSAGE);
+        this.dispose();
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     /**

@@ -43,10 +43,14 @@ public class Data {
         buffWrite.close();
     }
     
-    public static void inserir_usuario(Usuario user) throws IOException{
-        BufferedWriter buffWrite = new BufferedWriter(new FileWriter("users.txt"));
-        String linha = user.getCpf() + "|*|" + user.getSenha();
-        buffWrite.append(linha + '\n');
+    public static void inserir_usuario(Usuario user) throws IOException{        
+        BufferedWriter buffWrite = new BufferedWriter(new FileWriter("users.txt", true));
+        String linha = user.getCpf() + "|*|" + user.getSenha() + "|*|" + user.getNome() + "|*|" 
+                + user.getTelefone() + "|*|" + user.getIdade() + "|*|" + user.getRg() + "|*|"
+                + user.getCondicoes_especiais() + "|*|" + user.getMedicacoes_uso_continuo() + "|*|"
+                + user.getTipo_sanguineo() + "|*|" + user.getConvenio_Medico()
+                + "|*|" + user.getCodigo_Convenio() + "|*|\n";
+        buffWrite.append(linha);
         buffWrite.close();
     }
 }

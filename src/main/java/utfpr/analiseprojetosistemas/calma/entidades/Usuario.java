@@ -10,7 +10,7 @@ package utfpr.analiseprojetosistemas.calma.entidades;
  * @author atom
  */
 public class Usuario extends Pessoa {
-    
+
     private int idade;
     private long cpf;
     private String rg;
@@ -18,24 +18,23 @@ public class Usuario extends Pessoa {
     private String medicacoes_uso_continuo;
     private String tipo_sanguineo;
     private String senha;
-    private boolean termos_de_uso;
     private String convenio_medico;
     private String codigo_convenio;
     //contato de emerg
-    
+
     public Usuario() {
     }
-    
+
     public Usuario(String nome) {
         super(nome);
     }
-    
+
     public Usuario(String nome, long telefone) {
         super(nome, telefone);
     }
-    
-    public Usuario(String nome, long telefone, int idade, long cpf, String rg, 
-            String condicoes_especiais, String medicacoes_uso_continuo, 
+
+    public Usuario(String nome, long telefone, int idade, long cpf, String rg,
+            String condicoes_especiais, String medicacoes_uso_continuo,
             String tipo_sanguineo, String senha, String convenio_medico, String codigo) {
         super(nome, telefone);
         this.idade = idade;
@@ -73,15 +72,15 @@ public class Usuario extends Pessoa {
         return tipo_sanguineo;
     }
 
-    public boolean isTermos_de_uso() {
-        return termos_de_uso;
+    public String getSenha() {
+        return this.senha;
     }
 
-    public void setTermos_de_uso(boolean termos_de_uso) {
-        this.termos_de_uso = termos_de_uso;
+    public String getConvenio_Medico() {
+        return this.convenio_medico;
     }
-    
-    public String getSenha(){
-        return this.senha;
+
+    public String getCodigo_Convenio() {
+        return this.codigo_convenio;
     }
 }
