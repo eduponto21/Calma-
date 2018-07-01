@@ -17,7 +17,7 @@ public class Cadastro extends javax.swing.JFrame {
     public Cadastro() {
         initComponents();
     }
-    
+
     boolean termos_de_uso = false;
 
     /**
@@ -29,7 +29,7 @@ public class Cadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jOptionPaneTermosUso = new javax.swing.JOptionPane();
+        jOptionPaneAvisos = new javax.swing.JOptionPane();
         jLabelCadastro = new javax.swing.JLabel();
         jLabelNome = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -178,32 +178,34 @@ public class Cadastro extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                                         .addComponent(jCheckBoxTermosUso))
                                     .addComponent(jPasswordFieldConfirmar)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabelCadastro)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jComboBoxTipoSanguineo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel6)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jFormattedTextFieldCPF))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jFormattedTextFieldRG)))
-                                    .addGap(43, 43, 43)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelCadastro)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jComboBoxTipoSanguineo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jFormattedTextFieldCPF))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jFormattedTextFieldRG)))
+                                        .addGap(43, 43, 43))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addComponent(jButtonCadastrar, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
@@ -273,11 +275,11 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void jButtonTermosUsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTermosUsoActionPerformed
         // TODO add your handling code here:
-        jOptionPaneTermosUso.showMessageDialog(this,
-    "O usuário permitirá acesso a:\n discagem,\n gps,\n rede,\n contatos e\n"
-            + " dados fornecidos no cadastro.\n Se está de acordo, marque a checkbox.",
-    "Termos de Uso:",
-    jOptionPaneTermosUso.INFORMATION_MESSAGE);
+        jOptionPaneAvisos.showMessageDialog(this,
+                "O usuário permitirá acesso a:\n discagem,\n gps,\n rede,\n contatos e\n"
+                + " dados fornecidos no cadastro.\n Se está de acordo, marque a checkbox.",
+                "Termos de Uso:",
+                jOptionPaneAvisos.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButtonTermosUsoActionPerformed
 
     private void jCheckBoxTermosUsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxTermosUsoActionPerformed
@@ -287,14 +289,73 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         // TODO add your handling code here:
-        String nome = jTextFieldNome.getText();
-        long telefone = Long.parseLong(jFormattedTextFieldTelefone.getText());
+        long telefone, cpf;
+        int idade;
+        String nome, rg, tipo_sanguineo, medicacoes, condicoes_especiais, convenio, codigo, senha, confirmar;
+
+        //Coletar dados e testar validade
+        if (!jTextFieldNome.getText().equals("")) {
+            nome = jTextFieldNome.getText();
+        } else {
+            jOptionPaneAvisos.showMessageDialog(this, "Insira um nome!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!jFormattedTextFieldTelefone.getText().equals("")) {
+            telefone = Long.parseLong(jFormattedTextFieldTelefone.getText());
+        } else {
+            jOptionPaneAvisos.showMessageDialog(this, "Insira um telefone!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!jFormattedTextFieldIdade.getText().equals("")) {
+            idade = Integer.parseInt(jFormattedTextFieldIdade.getText());
+        } else if (Integer.parseInt(jFormattedTextFieldIdade.getText()) < 12) {
+            jOptionPaneAvisos.showMessageDialog(this, "Idade insuficiente!", "Incapaz!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        } else {
+            jOptionPaneAvisos.showMessageDialog(this, "Insira uma idade!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        }
+
+        rg = jFormattedTextFieldRG.getText();
+
+        if (!jFormattedTextFieldCPF.getText().equals("")) {
+            cpf = Long.parseLong(jFormattedTextFieldCPF.getText());
+        } else {
+            jOptionPaneAvisos.showMessageDialog(this, "Insira um CPF!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        }
+
+        if (!jComboBoxTipoSanguineo.getSelectedItem().toString().equals("Selecionar")) {
+            tipo_sanguineo = jComboBoxTipoSanguineo.getSelectedItem().toString();
+        } else {
+            jOptionPaneAvisos.showMessageDialog(this, "Selecione um tipo sanguíneo!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        }
         
+        medicacoes = jTextFieldMedicacoes.getText();
+        condicoes_especiais = jTextFieldCondicoesEspeciais.getText();
+        convenio = jTextFieldConvenio.getText();
+        codigo = jTextFieldCodigoConvenio.getText();
         
+        senha = new String(jPasswordFieldSenha.getPassword());
+        confirmar = new String(jPasswordFieldConfirmar.getPassword());
+        if(senha.length() < 6){
+            jOptionPaneAvisos.showMessageDialog(this, "Insira uma senha com\n no mínimo 6 caracteres!", "Muito simples!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        }else if(!confirmar.equals(senha)){
+            jOptionPaneAvisos.showMessageDialog(this, "Senhas não coincidem!", "Erro!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        }
         
-        
-        
-        
+        if(!termos_de_uso){
+            jOptionPaneAvisos.showMessageDialog(this, "Aceite os termos de uso!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            return;
+        }
+            
+        System.out.println(nome + telefone + idade + rg + cpf + tipo_sanguineo + medicacoes + condicoes_especiais + convenio + codigo + senha);
+
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     /**
@@ -354,7 +415,7 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelCadastro;
     private javax.swing.JLabel jLabelNome;
-    private javax.swing.JOptionPane jOptionPaneTermosUso;
+    private javax.swing.JOptionPane jOptionPaneAvisos;
     private javax.swing.JPasswordField jPasswordFieldConfirmar;
     private javax.swing.JPasswordField jPasswordFieldSenha;
     private javax.swing.JTextField jTextFieldCodigoConvenio;
