@@ -23,52 +23,52 @@ public class Data {
 
     public static void inserir_usuario(Usuario user) throws IOException {
         BufferedWriter buffWrite = new BufferedWriter(new FileWriter("users.txt", true));
-        String linha = user.getCpf() + "|*|" + user.getSenha() + "|*|" + user.getNome() + "|*|"
-                + user.getTelefone() + "|*|" + user.getIdade() + "|*|" + user.getRg() + "|*|"
-                + user.getCondicoes_especiais() + "|*|" + user.getMedicacoes_uso_continuo() + "|*|"
-                + user.getTipo_sanguineo() + "|*|" + user.getConvenio_Medico()
-                + "|*|" + user.getCodigo_Convenio() + "|*|\n";
+        String linha = "|*|" + user.getCpf() + "|*|" + user.getSenha() + "|*|" + user.getNome() + "|*|"
+                + user.getTelefone() + "|*|" + user.getIdade() + "|*|" + user.getTipo_sanguineo() + "|*|";
+        
+        if(user.getRg() == null)
+            linha += "|*|";
+        else
+            linha += user.getRg() + "|*|";
+        
+        linha += user.getCondicoes_especiais() + "|*|" + user.getMedicacoes_uso_continuo() + "|*|" + user.getConvenio_Medico() + "|*|" + user.getCodigo_Convenio() + "|*|\n";
         buffWrite.append(linha);
         buffWrite.close();
     }
 
-    public static Usuario buscar_usuario(long cpf) throws IOException {
+    public static Usuario buscar_usuario(String cpf) throws IOException {
         Usuario user = new Usuario();
-        String cepeefe = String.valueOf(cpf);
+        String cepeefe = cpf;
         boolean flag = false;
 
         BufferedReader buffRead = new BufferedReader(new FileReader("users.txt"));
         String linha = "";
+        int idade;
+        String nome, rg, tipo_sanguineo, medicacoes, condicoes_especiais, convenio, codigo, senha, telefone;
         while (linha != null) {
-            flag = false;
-            //Se for diferente, a flag acende
-            for (int i = 0; i < 11; i++) {
-                if (!(linha.charAt(i) == cepeefe.charAt(i))) {
-                    flag = true;
-                }
+            StringTokenizer st = new StringTokenizer(linha, "|*|");
+            if(!st.hasMoreTokens()){
+                linha = buffRead.readLine();
+                continue;
             }
-            //
-            if (!flag) {
+                
+            cepeefe = st.nextToken();
+            if (!cpf.equals(cepeefe)) {
+                linha = buffRead.readLine();
+            } else {
                 //achei
-                long telefone;//cpf
-                int idade;
-                String nome, rg, tipo_sanguineo, medicacoes, condicoes_especiais, convenio, codigo, senha;
-                StringTokenizer st = new StringTokenizer(linha, "|*|");
-                cpf = Long.parseLong(st.nextToken());
                 senha = st.nextToken();
                 nome = st.nextToken();
-                telefone = Long.parseLong(st.nextToken());
+                telefone = st.nextToken();
                 idade = Integer.parseInt(st.nextToken());
+                tipo_sanguineo = st.nextToken();
                 rg = st.nextToken();
                 condicoes_especiais = st.nextToken();
                 medicacoes = st.nextToken();
-                tipo_sanguineo = st.nextToken();
                 convenio = st.nextToken();
                 codigo = st.nextToken();
                 user = new Usuario(nome, telefone, idade, cpf, rg, condicoes_especiais, medicacoes, tipo_sanguineo, senha, convenio, codigo);
                 break;
-            } else {
-                linha = buffRead.readLine();
             }
         }
         buffRead.close();

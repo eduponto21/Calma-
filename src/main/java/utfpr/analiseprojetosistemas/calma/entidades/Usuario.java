@@ -12,7 +12,7 @@ package utfpr.analiseprojetosistemas.calma.entidades;
 public class Usuario extends Pessoa {
 
     private int idade;
-    private long cpf;
+    private String cpf;
     private String rg;
     private String condicoes_especiais;
     private String medicacoes_uso_continuo;
@@ -29,11 +29,11 @@ public class Usuario extends Pessoa {
         super(nome);
     }
 
-    public Usuario(String nome, long telefone) {
+    public Usuario(String nome, String telefone) {
         super(nome, telefone);
     }
 
-    public Usuario(String nome, long telefone, int idade, long cpf, String rg,
+    public Usuario(String nome, String telefone, int idade, String cpf, String rg,
             String condicoes_especiais, String medicacoes_uso_continuo,
             String tipo_sanguineo, String senha, String convenio_medico, String codigo) {
         super(nome, telefone);
@@ -52,7 +52,7 @@ public class Usuario extends Pessoa {
         return idade;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 

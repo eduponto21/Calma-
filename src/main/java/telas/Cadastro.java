@@ -116,7 +116,7 @@ public class Cadastro extends javax.swing.JFrame {
         });
 
         try {
-            jFormattedTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###########")));
+            jFormattedTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-#####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -129,13 +129,13 @@ public class Cadastro extends javax.swing.JFrame {
         }
 
         try {
-            jFormattedTextFieldRG.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######### ")));
+            jFormattedTextFieldRG.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###-# ")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jFormattedTextFieldCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###########")));
+            jFormattedTextFieldCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -296,25 +296,25 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         // TODO add your handling code here:
-        long telefone, cpf;
         int idade;
-        String nome, rg, tipo_sanguineo, medicacoes, condicoes_especiais, convenio, codigo, senha, confirmar;
+        String nome, rg, tipo_sanguineo, medicacoes, condicoes_especiais, convenio, codigo, senha, confirmar, cpf, telefone;
 
         //Coletar dados e testar validade
+        //Nome
         if (!jTextFieldNome.getText().equals("")) {
             nome = jTextFieldNome.getText();
         } else {
             jOptionPaneAvisos.showMessageDialog(this, "Insira um nome!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
             return;
         }
-
-        if (!jFormattedTextFieldTelefone.getText().equals("")) {
-            telefone = Long.parseLong(jFormattedTextFieldTelefone.getText());
+        //Telefone
+        if (!jFormattedTextFieldTelefone.getText().equals("(  )    -     ")) {
+            telefone = jFormattedTextFieldTelefone.getText();
         } else {
             jOptionPaneAvisos.showMessageDialog(this, "Insira um telefone!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
             return;
         }
-
+        //Idade
         if (!jFormattedTextFieldIdade.getText().equals("")) {
             idade = Integer.parseInt(jFormattedTextFieldIdade.getText());
         } else if (Integer.parseInt(jFormattedTextFieldIdade.getText()) < 12) {
@@ -324,28 +324,39 @@ public class Cadastro extends javax.swing.JFrame {
             jOptionPaneAvisos.showMessageDialog(this, "Insira uma idade!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
             return;
         }
-
-        rg = jFormattedTextFieldRG.getText();
-
-        if (!jFormattedTextFieldCPF.getText().equals("")) {
-            cpf = Long.parseLong(jFormattedTextFieldCPF.getText());
+        //RG
+        if(jFormattedTextFieldRG.getText().equals(".   .   -") || jFormattedTextFieldRG.getText().startsWith("."))
+            rg = null;
+        else
+            rg = jFormattedTextFieldRG.getText().trim();
+        //CPF
+        if (!jFormattedTextFieldCPF.getText().equals(".   .   -")) {
+            cpf = jFormattedTextFieldCPF.getText();
         } else {
             jOptionPaneAvisos.showMessageDialog(this, "Insira um CPF!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
             return;
         }
-
+        //Tipo Sanguíneo
         if (!jComboBoxTipoSanguineo.getSelectedItem().toString().equals("Selecionar")) {
             tipo_sanguineo = jComboBoxTipoSanguineo.getSelectedItem().toString();
         } else {
             jOptionPaneAvisos.showMessageDialog(this, "Selecione um tipo sanguíneo!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
             return;
         }
-        
+        //Restante
         medicacoes = jTextFieldMedicacoes.getText();
+        if(medicacoes.equals(""))
+            medicacoes = "null";
         condicoes_especiais = jTextFieldCondicoesEspeciais.getText();
+        if(condicoes_especiais.equals(""))
+            condicoes_especiais = "null";
         convenio = jTextFieldConvenio.getText();
+        if(convenio.equals(""))
+            convenio = "null";
         codigo = jTextFieldCodigoConvenio.getText();
-        
+        if(codigo.equals(""))
+            codigo = "null";
+        //Senha
         senha = new String(jPasswordFieldSenha.getPassword());
         confirmar = new String(jPasswordFieldConfirmar.getPassword());
         if(senha.length() < 6){
@@ -355,13 +366,13 @@ public class Cadastro extends javax.swing.JFrame {
             jOptionPaneAvisos.showMessageDialog(this, "Senhas não coincidem!", "Erro!", jOptionPaneAvisos.WARNING_MESSAGE);
             return;
         }
-        
+        //Termos de Uso
         if(!termos_de_uso){
             jOptionPaneAvisos.showMessageDialog(this, "Aceite os termos de uso!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
             return;
         }
+        //Criar usuário
         Usuario user = new Usuario(nome, telefone, idade, cpf, rg, condicoes_especiais, medicacoes, tipo_sanguineo, senha, convenio, codigo);
-        
         //Se usuário já existir, erro
         
        

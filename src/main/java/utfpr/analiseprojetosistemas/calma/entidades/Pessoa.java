@@ -12,7 +12,7 @@ package utfpr.analiseprojetosistemas.calma.entidades;
 public class Pessoa {
     
     protected String nome;
-    protected long telefone;
+    protected String telefone;
     
     public Pessoa() {
     }
@@ -21,7 +21,7 @@ public class Pessoa {
         this.nome = nome;
     }
     
-    public Pessoa(String nome, long telefone) {
+    public Pessoa(String nome, String telefone) {
         this.nome = nome;
         this.telefone = telefone;
     }
@@ -34,11 +34,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public long getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(long telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 }
