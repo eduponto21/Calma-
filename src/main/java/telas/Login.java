@@ -5,6 +5,12 @@
  */
 package telas;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import processos.Data;
+import utfpr.analiseprojetosistemas.calma.entidades.Usuario;
+
 /**
  *
  * @author atom
@@ -29,7 +35,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabelUsuario = new javax.swing.JLabel();
         jLabelSenha = new javax.swing.JLabel();
-        jTextFieldUsuario = new javax.swing.JTextField();
+        jTextFieldCPF = new javax.swing.JTextField();
         jPasswordFieldSenha = new javax.swing.JPasswordField();
         jButtonIr = new javax.swing.JButton();
         jButtonCadastrar = new javax.swing.JButton();
@@ -39,7 +45,7 @@ public class Login extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabelUsuario.setForeground(new java.awt.Color(204, 0, 0));
-        jLabelUsuario.setLabelFor(jTextFieldUsuario);
+        jLabelUsuario.setLabelFor(jTextFieldCPF);
         jLabelUsuario.setText("CPF:");
         jLabelUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -48,6 +54,11 @@ public class Login extends javax.swing.JFrame {
 
         jButtonIr.setForeground(new java.awt.Color(204, 0, 0));
         jButtonIr.setText("Ir!");
+        jButtonIr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIrActionPerformed(evt);
+            }
+        });
 
         jButtonCadastrar.setForeground(new java.awt.Color(204, 0, 0));
         jButtonCadastrar.setText("Cadastrar-se!");
@@ -77,7 +88,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabelSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(jTextFieldCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
                             .addComponent(jPasswordFieldSenha)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -95,7 +106,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelUsuario)
-                    .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelSenha)
@@ -144,6 +155,21 @@ public class Login extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
+    private void jButtonIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrActionPerformed
+        // TODO add your handling code here:
+        long cpf = Long.parseLong(jTextFieldCPF.getText());
+        String senha = new String(jPasswordFieldSenha.getPassword());
+        Usuario user = new Usuario();
+        try {
+            user = Data.buscar_usuario(cpf);
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("Nome:" + user.getNome());
+
+
+    }//GEN-LAST:event_jButtonIrActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -186,6 +212,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSenha;
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPasswordField jPasswordFieldSenha;
-    private javax.swing.JTextField jTextFieldUsuario;
+    private javax.swing.JTextField jTextFieldCPF;
     // End of variables declaration//GEN-END:variables
 }
