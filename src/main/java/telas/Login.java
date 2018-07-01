@@ -36,15 +36,20 @@ public class Login extends javax.swing.JFrame {
         jLabelCalma = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabelUsuario.setForeground(new java.awt.Color(204, 0, 0));
         jLabelUsuario.setLabelFor(jTextFieldUsuario);
         jLabelUsuario.setText("CPF:");
         jLabelUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jLabelSenha.setForeground(new java.awt.Color(204, 0, 0));
         jLabelSenha.setText("Senha:");
 
+        jButtonIr.setForeground(new java.awt.Color(204, 0, 0));
         jButtonIr.setText("Ir!");
 
+        jButtonCadastrar.setForeground(new java.awt.Color(204, 0, 0));
         jButtonCadastrar.setText("Cadastrar-se!");
         jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,6 +58,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         jLabelCalma.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabelCalma.setForeground(new java.awt.Color(204, 0, 0));
         jLabelCalma.setText("Calma!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -102,6 +108,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
