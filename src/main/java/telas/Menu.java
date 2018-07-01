@@ -42,6 +42,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem6.setText("jMenuItem6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
 
         Policia.setLabel("Polícia");
 
