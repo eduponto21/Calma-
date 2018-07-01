@@ -13,13 +13,14 @@ public class Usuario extends Pessoa {
     
     private int idade;
     private long cpf;
-    private long rg;
+    private String rg;
     private String condicoes_especiais;
     private String medicacoes_uso_continuo;
     private String tipo_sanguineo;
     private String senha;
     private boolean termos_de_uso;
-    private Convenio_Medico convenio_medico;
+    private String convenio_medico;
+    private String codigo_convenio;
     //contato de emerg
     
     public Usuario() {
@@ -29,13 +30,13 @@ public class Usuario extends Pessoa {
         super(nome);
     }
     
-    public Usuario(String nome, String telefone) {
+    public Usuario(String nome, long telefone) {
         super(nome, telefone);
     }
     
-    public Usuario(String nome, String telefone, int idade, long cpf, long rg, 
+    public Usuario(String nome, long telefone, int idade, long cpf, String rg, 
             String condicoes_especiais, String medicacoes_uso_continuo, 
-            String tipo_sanguineo, String senha, Convenio_Medico convenio_medico) {
+            String tipo_sanguineo, String senha, String convenio_medico, String codigo) {
         super(nome, telefone);
         this.idade = idade;
         this.cpf = cpf;
@@ -45,6 +46,7 @@ public class Usuario extends Pessoa {
         this.tipo_sanguineo = tipo_sanguineo;
         this.senha = senha;
         this.convenio_medico = convenio_medico;
+        this.codigo_convenio = codigo;
     }
 
     public int getIdade() {
@@ -55,7 +57,7 @@ public class Usuario extends Pessoa {
         return cpf;
     }
 
-    public long getRg() {
+    public String getRg() {
         return rg;
     }
 
@@ -79,7 +81,7 @@ public class Usuario extends Pessoa {
         this.termos_de_uso = termos_de_uso;
     }
     
-    
-    
-    
+    public String getSenha(){
+        return this.senha;
+    }
 }

@@ -5,6 +5,12 @@
  */
 package telas;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import processos.Data;
+import utfpr.analiseprojetosistemas.calma.entidades.Usuario;
+
 /**
  *
  * @author atom
@@ -356,7 +362,13 @@ public class Cadastro extends javax.swing.JFrame {
         }
             
         System.out.println(nome + telefone + idade + rg + cpf + tipo_sanguineo + medicacoes + condicoes_especiais + convenio + codigo + senha);
-
+        Usuario user = new Usuario(nome, telefone, idade, cpf, rg, condicoes_especiais, medicacoes, tipo_sanguineo, senha, convenio, codigo);
+        
+        try {
+            Data.inserir_usuario(user);
+        } catch (IOException ex) {
+            Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     /**
