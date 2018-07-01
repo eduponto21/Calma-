@@ -374,7 +374,16 @@ public class Cadastro extends javax.swing.JFrame {
         //Criar usuário
         Usuario user = new Usuario(nome, telefone, idade, cpf, rg, condicoes_especiais, medicacoes, tipo_sanguineo, senha, convenio, codigo);
         //Se usuário já existir, erro
-        
+        try {
+            Usuario teste = Data.buscar_usuario(cpf);
+            if(teste != null){
+                jOptionPaneAvisos.showMessageDialog(this, "CPF já registrado!", "Conflito!", jOptionPaneAvisos.WARNING_MESSAGE);
+                jFormattedTextFieldCPF.setText("");
+                return;
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
         //Se usuário não exisitir, cadastrá-lo 
         try {

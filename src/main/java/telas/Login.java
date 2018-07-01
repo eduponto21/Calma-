@@ -33,6 +33,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jOptionPaneInvalido = new javax.swing.JOptionPane();
         jLabelUsuario = new javax.swing.JLabel();
         jLabelSenha = new javax.swing.JLabel();
         jPasswordFieldSenha = new javax.swing.JPasswordField();
@@ -165,14 +166,24 @@ public class Login extends javax.swing.JFrame {
         String cpf = jFormattedTextFieldCPF.getText();
         String senha = new String(jPasswordFieldSenha.getPassword());
         Usuario user = new Usuario();
+        
+        //Procura usuário
         try {
             user = Data.buscar_usuario(cpf);
         } catch (IOException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Nome:" + user.getNome() + "senha:" + user.getSenha() + "rg:" + user.getRg());
+        //Se senha for inválida ou usuário não encontrado
+        if(user == null || !senha.equals(user.getSenha())){
+            jOptionPaneInvalido.showMessageDialog(this, "CPF e/ou Senha inválidos!", "Erro!", jOptionPaneInvalido.WARNING_MESSAGE);
+            jFormattedTextFieldCPF.setText("");
+            jPasswordFieldSenha.setText("");
+        }else{
+            //Se senha estiver correta
+            jOptionPaneInvalido.showMessageDialog(this, "Login realizado com sucesso!", "Sucesso!", jOptionPaneInvalido.INFORMATION_MESSAGE);
+        }
 
-
+        
     }//GEN-LAST:event_jButtonIrActionPerformed
 
     /**
@@ -217,6 +228,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCalma;
     private javax.swing.JLabel jLabelSenha;
     private javax.swing.JLabel jLabelUsuario;
+    private javax.swing.JOptionPane jOptionPaneInvalido;
     private javax.swing.JPasswordField jPasswordFieldSenha;
     // End of variables declaration//GEN-END:variables
 }
