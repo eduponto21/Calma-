@@ -2,11 +2,6 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.JMenuItem" name="jMenuItem6">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jMenuItem6"/>
-      </Properties>
-    </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBarConfiguracoes">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenuConfiguracoes">
@@ -18,11 +13,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar Perfil"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemEditarPerfilActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemContatosDeEmergencia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Contatos de Emerg&#xea;ncia"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemContatosDeEmergenciaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemMensagensPreProgramadas">
               <Properties>

@@ -154,10 +154,9 @@ public class Login extends javax.swing.JFrame {
             jPasswordFieldSenha.setText("");
         }else{
             //Se senha estiver correta
-            this.dispose();
-            jOptionPaneInvalido.showMessageDialog(this, "Login realizado com sucesso!", "Sucesso!", jOptionPaneInvalido.INFORMATION_MESSAGE);
-            String a[] = {""};
-            Menu.main(a);        
+            Menu meni = new Menu();
+            meni.iniciar(user);
+            this.setVisible(false);
         }
 
         
