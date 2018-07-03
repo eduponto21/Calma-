@@ -7,35 +7,29 @@
         <Property name="text" type="java.lang.String" value="jMenuItem6"/>
       </Properties>
     </Component>
-    <Menu class="javax.swing.JMenuBar" name="Configura&#xe7;&#xf5;es">
+    <Menu class="javax.swing.JMenuBar" name="jMenuBarConfiguracoes">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="ContatosDeEmergencia">
+        <Menu class="javax.swing.JMenu" name="jMenuConfiguracoes">
           <Properties>
             <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemEditarPerfil">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar Perfil"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
-              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemContatosDeEmergencia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Contatos de Emerg&#xea;ncia"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MensagensPreProgramadas">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemMensagensPreProgramadas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mensagens Pr&#xe9;-Programadas"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MensagensPreProgramadasActionPerformed"/>
-              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="Suporte">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemSuporte">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Suporte"/>
               </Properties>
@@ -52,9 +46,9 @@
     </Property>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBarConfiguracoes"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -74,10 +68,10 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="119" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="Bombeiros" min="-2" pref="141" max="-2" attributes="0"/>
-                  <Component id="ChamarContatoEmergencia" alignment="1" min="-2" pref="141" max="-2" attributes="0"/>
-                  <Component id="SAMU" alignment="1" min="-2" pref="141" max="-2" attributes="0"/>
-                  <Component id="Policia" alignment="1" min="-2" pref="141" max="-2" attributes="0"/>
+                  <Component id="jButtonBombeiros" min="-2" pref="141" max="-2" attributes="0"/>
+                  <Component id="jButtonChamarContatoEmergencia" alignment="1" min="-2" pref="141" max="-2" attributes="0"/>
+                  <Component id="jButtonSAMU" alignment="1" min="-2" pref="141" max="-2" attributes="0"/>
+                  <Component id="jButtonPolicia" alignment="1" min="-2" pref="141" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
@@ -86,37 +80,45 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="Policia" min="-2" pref="93" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="Bombeiros" min="-2" pref="93" max="-2" attributes="0"/>
+              <Component id="jButtonPolicia" min="-2" pref="93" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="jButtonBombeiros" min="-2" pref="93" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Component id="SAMU" min="-2" pref="93" max="-2" attributes="0"/>
+              <Component id="jButtonSAMU" min="-2" pref="93" max="-2" attributes="0"/>
               <EmptySpace pref="19" max="32767" attributes="0"/>
-              <Component id="ChamarContatoEmergencia" min="-2" pref="93" max="-2" attributes="0"/>
+              <Component id="jButtonChamarContatoEmergencia" min="-2" pref="93" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="java.awt.Button" name="Policia">
+    <Component class="java.awt.Button" name="jButtonPolicia">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="36" style="0"/>
+        </Property>
         <Property name="label" type="java.lang.String" value="Pol&#xed;cia"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="ChamarContatoEmergencia">
+    <Component class="java.awt.Button" name="jButtonChamarContatoEmergencia">
       <Properties>
         <Property name="label" type="java.lang.String" value="Contatos de Emerg&#xea;ncia"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="SAMU">
+    <Component class="java.awt.Button" name="jButtonSAMU">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="36" style="0"/>
+        </Property>
         <Property name="label" type="java.lang.String" value="SAMU"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="Bombeiros">
+    <Component class="java.awt.Button" name="jButtonBombeiros">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="24" style="0"/>
+        </Property>
         <Property name="label" type="java.lang.String" value="Bombeiros"/>
       </Properties>
     </Component>

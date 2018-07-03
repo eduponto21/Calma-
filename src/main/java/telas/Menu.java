@@ -28,57 +28,50 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem6 = new javax.swing.JMenuItem();
-        Policia = new java.awt.Button();
-        ChamarContatoEmergencia = new java.awt.Button();
-        SAMU = new java.awt.Button();
-        Bombeiros = new java.awt.Button();
-        Configurações = new javax.swing.JMenuBar();
-        ContatosDeEmergencia = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        MensagensPreProgramadas = new javax.swing.JMenuItem();
-        Suporte = new javax.swing.JMenuItem();
+        jButtonPolicia = new java.awt.Button();
+        jButtonChamarContatoEmergencia = new java.awt.Button();
+        jButtonSAMU = new java.awt.Button();
+        jButtonBombeiros = new java.awt.Button();
+        jMenuBarConfiguracoes = new javax.swing.JMenuBar();
+        jMenuConfiguracoes = new javax.swing.JMenu();
+        jMenuItemEditarPerfil = new javax.swing.JMenuItem();
+        jMenuItemContatosDeEmergencia = new javax.swing.JMenuItem();
+        jMenuItemMensagensPreProgramadas = new javax.swing.JMenuItem();
+        jMenuItemSuporte = new javax.swing.JMenuItem();
 
         jMenuItem6.setText("jMenuItem6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        Policia.setLabel("Polícia");
+        jButtonPolicia.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jButtonPolicia.setLabel("Polícia");
 
-        ChamarContatoEmergencia.setLabel("Contatos de Emergência");
+        jButtonChamarContatoEmergencia.setLabel("Contatos de Emergência");
 
-        SAMU.setLabel("SAMU");
+        jButtonSAMU.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jButtonSAMU.setLabel("SAMU");
 
-        Bombeiros.setLabel("Bombeiros");
+        jButtonBombeiros.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jButtonBombeiros.setLabel("Bombeiros");
 
-        ContatosDeEmergencia.setText("Configurações");
+        jMenuConfiguracoes.setText("Configurações");
 
-        jMenuItem1.setText("Editar Perfil");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        ContatosDeEmergencia.add(jMenuItem1);
+        jMenuItemEditarPerfil.setText("Editar Perfil");
+        jMenuConfiguracoes.add(jMenuItemEditarPerfil);
 
-        jMenuItem2.setText("Contatos de Emergência");
-        ContatosDeEmergencia.add(jMenuItem2);
+        jMenuItemContatosDeEmergencia.setText("Contatos de Emergência");
+        jMenuConfiguracoes.add(jMenuItemContatosDeEmergencia);
 
-        MensagensPreProgramadas.setText("Mensagens Pré-Programadas");
-        MensagensPreProgramadas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MensagensPreProgramadasActionPerformed(evt);
-            }
-        });
-        ContatosDeEmergencia.add(MensagensPreProgramadas);
+        jMenuItemMensagensPreProgramadas.setText("Mensagens Pré-Programadas");
+        jMenuConfiguracoes.add(jMenuItemMensagensPreProgramadas);
 
-        Suporte.setText("Suporte");
-        ContatosDeEmergencia.add(Suporte);
+        jMenuItemSuporte.setText("Suporte");
+        jMenuConfiguracoes.add(jMenuItemSuporte);
 
-        Configurações.add(ContatosDeEmergencia);
+        jMenuBarConfiguracoes.add(jMenuConfiguracoes);
 
-        setJMenuBar(Configurações);
+        setJMenuBar(jMenuBarConfiguracoes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,36 +80,28 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(119, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Bombeiros, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ChamarContatoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SAMU, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Policia, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonBombeiros, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonChamarContatoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonSAMU, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonPolicia, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Policia, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Bombeiros, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonPolicia, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jButtonBombeiros, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
-                .addComponent(SAMU, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonSAMU, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(ChamarContatoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonChamarContatoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void MensagensPreProgramadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MensagensPreProgramadasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MensagensPreProgramadasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,7 +114,7 @@ public class Menu extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -155,16 +140,16 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button Bombeiros;
-    private java.awt.Button ChamarContatoEmergencia;
-    private javax.swing.JMenuBar Configurações;
-    private javax.swing.JMenu ContatosDeEmergencia;
-    private javax.swing.JMenuItem MensagensPreProgramadas;
-    private java.awt.Button Policia;
-    private java.awt.Button SAMU;
-    private javax.swing.JMenuItem Suporte;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private java.awt.Button jButtonBombeiros;
+    private java.awt.Button jButtonChamarContatoEmergencia;
+    private java.awt.Button jButtonPolicia;
+    private java.awt.Button jButtonSAMU;
+    private javax.swing.JMenuBar jMenuBarConfiguracoes;
+    private javax.swing.JMenu jMenuConfiguracoes;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItemContatosDeEmergencia;
+    private javax.swing.JMenuItem jMenuItemEditarPerfil;
+    private javax.swing.JMenuItem jMenuItemMensagensPreProgramadas;
+    private javax.swing.JMenuItem jMenuItemSuporte;
     // End of variables declaration//GEN-END:variables
 }
