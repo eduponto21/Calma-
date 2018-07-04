@@ -10,22 +10,22 @@ package entidades;
  * @author atom
  */
 public class Pessoa {
-    
+
     protected String nome;
     protected String telefone;
-    
+
     public Pessoa() {
     }
-    
+
     public Pessoa(String nome) {
         this.nome = nome;
     }
-    
+
     public Pessoa(String nome, String telefone) {
         this.nome = nome;
         this.telefone = telefone;
     }
-    
+
     public String getNome() {
         return nome;
     }

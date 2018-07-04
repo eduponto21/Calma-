@@ -20,7 +20,7 @@ import entidades.Usuario;
  * @author atom
  */
 public class Data {
-    
+
     public static void inserir_usuario(Usuario user) throws IOException {
         //Escrever usuario
         BufferedWriter buffWrite = new BufferedWriter(new FileWriter("users.txt", true));
@@ -37,7 +37,7 @@ public class Data {
                 + user.getConvenio_Medico() + "|*|" + user.getCodigo_Convenio() + "|*|\n";
         buffWrite.append(linha);
         buffWrite.close();
-        
+
         //Escrever contatos
         buffWrite = new BufferedWriter(new FileWriter("ce.txt", true));
         linha = "|*|" + user.getCpf() + "|*|Null|*|Null|*|Null|*|Null|*|Null|*|Null|*|Null|*|Null|*|\n";
@@ -108,8 +108,8 @@ public class Data {
         buffRead.close();
         return linha;
     }
-    
-    public static void replaceLinha(File f, String linhaAlterar, String linhaAlterada) {
+
+    public static void trocar_linha(File f, String linhaAlterar, String linhaAlterada) {
         File nf = new File("temporario.tmp");
         FileWriter fw = null;
         Scanner s = null;
@@ -141,32 +141,5 @@ public class Data {
         f.delete();
         nf.renameTo(f);
     }
-
-    
-
-//    public static void leitor(String path) throws IOException {
-//        BufferedReader buffRead = new BufferedReader(new FileReader(path));
-//        String linha = "";
-//        while (true) {
-//            if (linha != null) {
-//                System.out.println(linha);
-//
-//            } else {
-//                break;
-//            }
-//            linha = buffRead.readLine();
-//        }
-//        buffRead.close();
-//    }
-//
-//    public static void escritor(String path) throws IOException {
-//        BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
-//        String linha = "";
-//        Scanner in = new Scanner(System.in);
-//        System.out.println("Escreva algo: ");
-//        linha = in.nextLine();
-//        buffWrite.append(linha + "\n");
-//        buffWrite.close();
-//    }
 
 }

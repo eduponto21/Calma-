@@ -56,6 +56,7 @@ public class ContatosEmergencia extends javax.swing.JFrame {
         jFormattedTextFieldTelefone = new javax.swing.JFormattedTextField();
         jButtonSalvar = new javax.swing.JButton();
         jLabelContato = new javax.swing.JLabel();
+        jButtonExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,6 +119,13 @@ public class ContatosEmergencia extends javax.swing.JFrame {
 
         jLabelContato.setText("Contato um");
 
+        jButtonExcluir.setText("Excluir");
+        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -156,6 +164,8 @@ public class ContatosEmergencia extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabelContato)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSalvar)))
                 .addContainerGap())
         );
@@ -190,9 +200,11 @@ public class ContatosEmergencia extends javax.swing.JFrame {
                     .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonSalvar)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButtonSalvar)
+                        .addComponent(jButtonExcluir))
                     .addComponent(jLabelContato))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(jButtonVoltar))
         );
 
@@ -203,60 +215,86 @@ public class ContatosEmergencia extends javax.swing.JFrame {
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        Menu meni = new Menu();
+        try {
+            meni.iniciar(this.user);
+        } catch (IOException ex) {
+            Logger.getLogger(ContatosEmergencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonVoltarActionPerformed
 
     private void jButtonContatoUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoUmActionPerformed
         // TODO add your handling code here:
+        jTextFieldNome.setText("");
+        jFormattedTextFieldTelefone.setText("");
         jLabelNome.setVisible(true);
         jLabelTelefone.setVisible(true);
         jTextFieldNome.setVisible(true);
         jFormattedTextFieldTelefone.setVisible(true);
         jButtonSalvar.setVisible(true);
+        jButtonExcluir.setVisible(true);
         jLabelContato.setVisible(true);
         jLabelContato.setText("Contato um");
-        jTextFieldNome.setText(this.user.getContato_um().getNome());
+        if (!this.user.getContato_um().getNome().equals("Null")) {
+            jTextFieldNome.setText(this.user.getContato_um().getNome());
+        }
         jFormattedTextFieldTelefone.setText(this.user.getContato_um().getTelefone());
         controle = 1;
     }//GEN-LAST:event_jButtonContatoUmActionPerformed
 
     private void jButtonContatoDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoDoisActionPerformed
         // TODO add your handling code here:
+        jTextFieldNome.setText("");
+        jFormattedTextFieldTelefone.setText("");
         jLabelNome.setVisible(true);
         jLabelTelefone.setVisible(true);
         jTextFieldNome.setVisible(true);
         jFormattedTextFieldTelefone.setVisible(true);
         jButtonSalvar.setVisible(true);
+        jButtonExcluir.setVisible(true);
         jLabelContato.setVisible(true);
         jLabelContato.setText("Contato dois");
-        jTextFieldNome.setText(this.user.getContato_dois().getNome());
+        if (!this.user.getContato_dois().getNome().equals("Null")) {
+            jTextFieldNome.setText(this.user.getContato_dois().getNome());
+        }
         jFormattedTextFieldTelefone.setText(this.user.getContato_dois().getTelefone());
         controle = 2;
     }//GEN-LAST:event_jButtonContatoDoisActionPerformed
 
     private void jButtonContatoTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoTresActionPerformed
         // TODO add your handling code here:
+        jTextFieldNome.setText("");
+        jFormattedTextFieldTelefone.setText("");
         jLabelNome.setVisible(true);
         jLabelTelefone.setVisible(true);
         jTextFieldNome.setVisible(true);
         jFormattedTextFieldTelefone.setVisible(true);
         jButtonSalvar.setVisible(true);
+        jButtonExcluir.setVisible(true);
         jLabelContato.setVisible(true);
         jLabelContato.setText("Contato tres");
-        jTextFieldNome.setText(this.user.getContato_tres().getNome());
+        if (!this.user.getContato_tres().getNome().equals("Null")) {
+            jTextFieldNome.setText(this.user.getContato_tres().getNome());
+        }
         jFormattedTextFieldTelefone.setText(this.user.getContato_tres().getTelefone());
         controle = 3;
     }//GEN-LAST:event_jButtonContatoTresActionPerformed
 
     private void jButtonContatoQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoQuatroActionPerformed
         // TODO add your handling code here:
+        jTextFieldNome.setText("");
+        jFormattedTextFieldTelefone.setText("");
         jLabelNome.setVisible(true);
         jLabelTelefone.setVisible(true);
         jTextFieldNome.setVisible(true);
         jFormattedTextFieldTelefone.setVisible(true);
         jButtonSalvar.setVisible(true);
+        jButtonExcluir.setVisible(true);
         jLabelContato.setVisible(true);
         jLabelContato.setText("Contato quatro");
-        jTextFieldNome.setText(this.user.getContato_quatro().getNome());
+        if (!this.user.getContato_quatro().getNome().equals("Null")) {
+            jTextFieldNome.setText(this.user.getContato_quatro().getNome());
+        }
         jFormattedTextFieldTelefone.setText(this.user.getContato_quatro().getTelefone());
         controle = 4;
     }//GEN-LAST:event_jButtonContatoQuatroActionPerformed
@@ -264,8 +302,9 @@ public class ContatosEmergencia extends javax.swing.JFrame {
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         // TODO add your handling code here:
         String nome = jTextFieldNome.getText();
-        if(nome.equals(""))
+        if (nome.equals("")) {
             nome = "Null";
+        }
         String telefone = jFormattedTextFieldTelefone.getText();
         String linha = null;
         try {
@@ -278,25 +317,62 @@ public class ContatosEmergencia extends javax.swing.JFrame {
         String cpf, nome_novo, telefone_novo, linha_nova;
         cpf = st.nextToken();
         linha_nova = "|*|" + cpf + "|*|";
-        for(int i = 1; i <= this.controle; i++){
+        for (int i = 1; i <= this.controle; i++) {
             nome_novo = st.nextToken();
             telefone_novo = st.nextToken();
-            if(i != this.controle)
+            if (i != this.controle) {
                 linha_nova += nome_novo + "|*|" + telefone_novo + "|*|";
-            else
+            } else {
                 linha_nova += nome + "|*|" + telefone + "|*|";
+            }
         }
         int faltante = 4 - this.controle;
-        for(int i = 1; i <= faltante; i++){
+        for (int i = 1; i <= faltante; i++) {
             nome_novo = st.nextToken();
             telefone_novo = st.nextToken();
             linha_nova += nome_novo + "|*|" + telefone_novo + "|*|";
         }
         //Agora tenho nova linha, entao
-        Data.replaceLinha(new File("ce.txt"), linha, linha_nova);
+        Data.trocar_linha(new File("ce.txt"), linha, linha_nova);
         //Salvo, so fazer tratamentos
         this.iniciar(this.user);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+        // TODO add your handling code here:
+        String nome = "Null";
+        String telefone = "Null";
+        String linha = null;
+        try {
+            linha = Data.buscar_linha(user.getCpf(), "ce.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(ContatosEmergencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        StringTokenizer st = new StringTokenizer(linha, "|*|");
+        String cpf, nome_novo, telefone_novo, linha_nova;
+        cpf = st.nextToken();
+        linha_nova = "|*|" + cpf + "|*|";
+        for (int i = 1; i <= this.controle; i++) {
+            nome_novo = st.nextToken();
+            telefone_novo = st.nextToken();
+            if (i != this.controle) {
+                linha_nova += nome_novo + "|*|" + telefone_novo + "|*|";
+            } else {
+                linha_nova += nome + "|*|" + telefone + "|*|";
+            }
+        }
+        int faltante = 4 - this.controle;
+        for (int i = 1; i <= faltante; i++) {
+            nome_novo = st.nextToken();
+            telefone_novo = st.nextToken();
+            linha_nova += nome_novo + "|*|" + telefone_novo + "|*|";
+        }
+        //Agora tenho nova linha, entao
+        Data.trocar_linha(new File("ce.txt"), linha, linha_nova);
+        //Salvo, so fazer tratamentos
+        this.iniciar(this.user);
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     public void iniciar(Usuario user) {
         this.user = user;
@@ -306,8 +382,9 @@ public class ContatosEmergencia extends javax.swing.JFrame {
         jTextFieldNome.setVisible(false);
         jFormattedTextFieldTelefone.setVisible(false);
         jButtonSalvar.setVisible(false);
+        jButtonExcluir.setVisible(false);
         jLabelContato.setVisible(false);
-        
+
         //Atualizar os contatos de emergencia
         String linha = null;
         try {
@@ -318,73 +395,55 @@ public class ContatosEmergencia extends javax.swing.JFrame {
 
         StringTokenizer st = new StringTokenizer(linha, "|*|");
         String cpf = st.nextToken();
-        
+
         Pessoa contato1 = new Pessoa();
         contato1.setNome(st.nextToken());
         contato1.setTelefone(st.nextToken());
         this.user.setContato_um(contato1);
-        
+
         Pessoa contato2 = new Pessoa();
         contato2.setNome(st.nextToken());
         contato2.setTelefone(st.nextToken());
         this.user.setContato_dois(contato2);
-        
+
         Pessoa contato3 = new Pessoa();
         contato3.setNome(st.nextToken());
         contato3.setTelefone(st.nextToken());
         this.user.setContato_tres(contato3);
-        
+
         Pessoa contato4 = new Pessoa();
         contato4.setNome(st.nextToken());
         contato4.setTelefone(st.nextToken());
         this.user.setContato_quatro(contato4);
         //
-        jTextFieldContatoUm.setText(this.user.getContato_um().getNome());
-        jTextFieldContatoDois.setText(this.user.getContato_dois().getNome());
-        jTextFieldContatoTres.setText(this.user.getContato_tres().getNome());
-        jTextFieldContatoQuatro.setText(this.user.getContato_quatro().getNome());
+        if (!this.user.getContato_um().getNome().equals("Null")) {
+            jTextFieldContatoUm.setText(this.user.getContato_um().getNome());
+        } else {
+            jTextFieldContatoUm.setText("");
+        }
+        if (!this.user.getContato_dois().getNome().equals("Null")) {
+            jTextFieldContatoDois.setText(this.user.getContato_dois().getNome());
+        } else {
+            jTextFieldContatoDois.setText("");
+        }
+        if (!this.user.getContato_tres().getNome().equals("Null")) {
+            jTextFieldContatoTres.setText(this.user.getContato_tres().getNome());
+        } else {
+            jTextFieldContatoTres.setText("");
+        }
+        if (!this.user.getContato_quatro().getNome().equals("Null")) {
+            jTextFieldContatoQuatro.setText(this.user.getContato_quatro().getNome());
+        } else {
+            jTextFieldContatoQuatro.setText("");
+        }
     }
-
-    /**
-     * @param args the command line arguments //
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(ContatosEmergencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(ContatosEmergencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(ContatosEmergencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(ContatosEmergencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new ContatosEmergencia().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonContatoDois;
     private javax.swing.JButton jButtonContatoQuatro;
     private javax.swing.JButton jButtonContatoTres;
     private javax.swing.JButton jButtonContatoUm;
+    private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JButton jButtonVoltar;
     private javax.swing.JFormattedTextField jFormattedTextFieldTelefone;

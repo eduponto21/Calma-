@@ -367,7 +367,7 @@ public class Perfil extends javax.swing.JFrame {
                     + new_user.getConvenio_Medico() + "|*|" + new_user.getCodigo_Convenio() + "|*|\n";
 
             //Trocar linha pelo novo usuario
-            Data.replaceLinha(new File("users.txt"), linha, novaLinha);
+            Data.trocar_linha(new File("users.txt"), linha, novaLinha);
         } catch (IOException ex) {
             Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
