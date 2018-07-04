@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utfpr.analiseprojetosistemas.calma.entidades;
+package entidades;
 
 /**
  *
@@ -20,7 +20,10 @@ public class Usuario extends Pessoa {
     private String senha;
     private String convenio_medico;
     private String codigo_convenio;
-    //contato de emerg
+    private Pessoa contato_um;
+    private Pessoa contato_dois;
+    private Pessoa contato_tres;
+    private Pessoa contato_quatro;
 
     public Usuario() {
     }
@@ -82,5 +85,37 @@ public class Usuario extends Pessoa {
 
     public String getCodigo_Convenio() {
         return this.codigo_convenio;
+    }
+
+    public Pessoa getContato_um() {
+        return contato_um;
+    }
+
+    public void setContato_um(Pessoa contato_um) {
+        this.contato_um = contato_um;
+    }
+
+    public Pessoa getContato_dois() {
+        return contato_dois;
+    }
+
+    public void setContato_dois(Pessoa contato_dois) {
+        this.contato_dois = contato_dois;
+    }
+
+    public Pessoa getContato_tres() {
+        return contato_tres;
+    }
+
+    public void setContato_tres(Pessoa contato_tres) {
+        this.contato_tres = contato_tres;
+    }
+
+    public Pessoa getContato_quatro() {
+        return contato_quatro;
+    }
+
+    public void setContato_quatro(Pessoa contato_quatro) {
+        this.contato_quatro = contato_quatro;
     }
 }

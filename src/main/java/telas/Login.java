@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import processos.Data;
-import utfpr.analiseprojetosistemas.calma.entidades.Usuario;
+import entidades.Usuario;
 
 /**
  *

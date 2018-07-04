@@ -14,15 +14,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-import utfpr.analiseprojetosistemas.calma.entidades.Usuario;
+import entidades.Usuario;
 
 /**
  *
  * @author atom
  */
 public class Data {
-
+    
     public static void inserir_usuario(Usuario user) throws IOException {
+        //Escrever usuario
         BufferedWriter buffWrite = new BufferedWriter(new FileWriter("users.txt", true));
         String linha = "|*|" + user.getCpf() + "|*|" + user.getSenha() + "|*|" + user.getNome() + "|*|"
                 + user.getTelefone() + "|*|" + user.getIdade() + "|*|" + user.getTipo_sanguineo() + "|*|";
@@ -35,6 +36,12 @@ public class Data {
 
         linha += user.getCondicoes_especiais() + "|*|" + user.getMedicacoes_uso_continuo() + "|*|"
                 + user.getConvenio_Medico() + "|*|" + user.getCodigo_Convenio() + "|*|\n";
+        buffWrite.append(linha);
+        buffWrite.close();
+        
+        //Escrever contatos
+        buffWrite = new BufferedWriter(new FileWriter("ce.txt", true));
+        linha = "|*|" + user.getCpf() + "|*|Null|*|Null|*|Null|*|Null|*|Null|*|Null|*|Null|*|Null|*|\n";
         buffWrite.append(linha);
         buffWrite.close();
     }
@@ -78,12 +85,12 @@ public class Data {
         return user;
     }
 
-    public static String buscar_linha_usuario(String cpf) throws IOException {
+    public static String buscar_linha(String cpf, String arquivo) throws IOException {
         Usuario user = new Usuario();
         String cepeefe = cpf;
         boolean flag = false;
 
-        BufferedReader buffRead = new BufferedReader(new FileReader("users.txt"));
+        BufferedReader buffRead = new BufferedReader(new FileReader(arquivo));
         String linha = "";
         while (linha != null) {
             StringTokenizer st = new StringTokenizer(linha, "|*|");
@@ -103,23 +110,7 @@ public class Data {
         return linha;
     }
     
-    public static void replaceLinha(String linhaAlterar, String linhaAlterada, Usuario user) {
-        
-        String novaLinha = "|*|" + user.getCpf() + "|*|" + user.getSenha() + "|*|" + user.getNome() + "|*|"
-                + user.getTelefone() + "|*|" + user.getIdade() + "|*|" + user.getTipo_sanguineo() + "|*|";
-
-        if (user.getRg() == null) {
-            novaLinha += "|*|";
-        } else {
-            novaLinha += user.getRg() + "|*|";
-        }
-
-        novaLinha += user.getCondicoes_especiais() + "|*|" + user.getMedicacoes_uso_continuo() + "|*|"
-                + user.getConvenio_Medico() + "|*|" + user.getCodigo_Convenio() + "|*|\n";
-        linhaAlterada = novaLinha;
-        
-        File f = new File("users.txt");
-        
+    public static void replaceLinha(File f, String linhaAlterar, String linhaAlterada) {
         File nf = new File("temporario.tmp");
         FileWriter fw = null;
         Scanner s = null;
@@ -151,6 +142,9 @@ public class Data {
         f.delete();
         nf.renameTo(f);
     }
+
+    
+
 //    public static void leitor(String path) throws IOException {
 //        BufferedReader buffRead = new BufferedReader(new FileReader(path));
 //        String linha = "";

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import processos.Data;
-import utfpr.analiseprojetosistemas.calma.entidades.Usuario;
+import entidades.Usuario;
 
 /**
  *
@@ -129,8 +129,8 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItemContatosDeEmergenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemContatosDeEmergenciaActionPerformed
         // TODO add your handling code here:
-        
-        
+        ContatosEmergencia ce = new ContatosEmergencia();
+        ce.iniciar(this.user);        
     }//GEN-LAST:event_jMenuItemContatosDeEmergenciaActionPerformed
 
     public void iniciar(Usuario user){
