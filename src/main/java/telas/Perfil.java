@@ -306,7 +306,7 @@ public class Perfil extends javax.swing.JFrame {
             return;
         }
         //Idade
-        if (!jFormattedTextFieldIdade.getText().equals("")) {
+        if (!jFormattedTextFieldIdade.getText().equals("") && Integer.parseInt(jFormattedTextFieldIdade.getText()) >=12) {
             idade = Integer.parseInt(jFormattedTextFieldIdade.getText());
         } else if (Integer.parseInt(jFormattedTextFieldIdade.getText()) < 12) {
             JOptionPane.showMessageDialog(this, "Idade insuficiente!", "Incapaz!", JOptionPane.WARNING_MESSAGE);
@@ -316,13 +316,13 @@ public class Perfil extends javax.swing.JFrame {
             return;
         }
         //RG
-        if (jFormattedTextFieldRG.getText().equals(".   .   -") || jFormattedTextFieldRG.getText().startsWith(".")) {
+        if (jFormattedTextFieldRG.getText().trim().equals(".   .   -") || jFormattedTextFieldRG.getText().trim().startsWith(".")) {
             rg = null;
         } else {
             rg = jFormattedTextFieldRG.getText().trim();
         }
         //CPF
-        if (!jFormattedTextFieldCPF.getText().equals(".   .   -")) {
+        if (!jFormattedTextFieldCPF.getText().trim().equals(".   .   -")) {
             cpf = jFormattedTextFieldCPF.getText();
         } else {
             JOptionPane.showMessageDialog(this, "Insira um CPF!", "Incompleto!", JOptionPane.WARNING_MESSAGE);

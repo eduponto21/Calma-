@@ -326,7 +326,7 @@ public class Cadastro extends javax.swing.JFrame {
             return;
         }
         //Idade
-        if (!jFormattedTextFieldIdade.getText().equals("")) {
+        if (!jFormattedTextFieldIdade.getText().equals("") && Integer.parseInt(jFormattedTextFieldIdade.getText()) >=12) {
             idade = Integer.parseInt(jFormattedTextFieldIdade.getText());
         } else if (Integer.parseInt(jFormattedTextFieldIdade.getText()) < 12) {
             jOptionPaneAvisos.showMessageDialog(this, "Idade insuficiente!", "Incapaz!", jOptionPaneAvisos.WARNING_MESSAGE);
@@ -341,7 +341,7 @@ public class Cadastro extends javax.swing.JFrame {
         else
             rg = jFormattedTextFieldRG.getText().trim();
         //CPF
-        if (!jFormattedTextFieldCPF.getText().equals(".   .   -")) {
+        if (!jFormattedTextFieldCPF.getText().trim().equals(".   .   -")) {
             cpf = jFormattedTextFieldCPF.getText();
         } else {
             jOptionPaneAvisos.showMessageDialog(this, "Insira um CPF!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
