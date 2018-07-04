@@ -131,8 +131,8 @@ public class Login extends javax.swing.JFrame {
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        String a[] = {""};
-        Cadastro.main(a);
+        Cadastro cadastro = new Cadastro();
+        cadastro.iniciar();
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jButtonIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrActionPerformed
@@ -155,8 +155,12 @@ public class Login extends javax.swing.JFrame {
         }else{
             //Se senha estiver correta
             Menu meni = new Menu();
-            meni.iniciar(user);
-            this.setVisible(false);
+            try {
+                meni.iniciar(user);
+            } catch (IOException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.dispose();
         }
 
         

@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import processos.Data;
 import entidades.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +20,6 @@ import entidades.Usuario;
 public class Perfil extends javax.swing.JFrame {
 
     Usuario user;
-    Menu meni;
 
     /**
      * Creates new form Cadastro
@@ -27,7 +27,6 @@ public class Perfil extends javax.swing.JFrame {
     public Perfil() {
         initComponents();
         this.user = new Usuario();
-        this.meni = new Menu();
     }
 
     /**
@@ -280,24 +279,24 @@ public class Perfil extends javax.swing.JFrame {
         if (!jTextFieldNome.getText().equals("")) {
             nome = jTextFieldNome.getText();
         } else {
-            jOptionPaneAvisos.showMessageDialog(this, "Insira um nome!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Insira um nome!", "Incompleto!", JOptionPane.WARNING_MESSAGE);
             return;
         }
         //Telefone
         if (!jFormattedTextFieldTelefone.getText().equals("(  )    -     ")) {
             telefone = jFormattedTextFieldTelefone.getText();
         } else {
-            jOptionPaneAvisos.showMessageDialog(this, "Insira um telefone!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Insira um telefone!", "Incompleto!", JOptionPane.WARNING_MESSAGE);
             return;
         }
         //Idade
         if (!jFormattedTextFieldIdade.getText().equals("")) {
             idade = Integer.parseInt(jFormattedTextFieldIdade.getText());
         } else if (Integer.parseInt(jFormattedTextFieldIdade.getText()) < 12) {
-            jOptionPaneAvisos.showMessageDialog(this, "Idade insuficiente!", "Incapaz!", jOptionPaneAvisos.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Idade insuficiente!", "Incapaz!", JOptionPane.WARNING_MESSAGE);
             return;
         } else {
-            jOptionPaneAvisos.showMessageDialog(this, "Insira uma idade!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Insira uma idade!", "Incompleto!", JOptionPane.WARNING_MESSAGE);
             return;
         }
         //RG
@@ -310,14 +309,14 @@ public class Perfil extends javax.swing.JFrame {
         if (!jFormattedTextFieldCPF.getText().equals(".   .   -")) {
             cpf = jFormattedTextFieldCPF.getText();
         } else {
-            jOptionPaneAvisos.showMessageDialog(this, "Insira um CPF!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Insira um CPF!", "Incompleto!", JOptionPane.WARNING_MESSAGE);
             return;
         }
         //Tipo Sanguíneo
         if (!jComboBoxTipoSanguineo.getSelectedItem().toString().equals("Selecionar")) {
             tipo_sanguineo = jComboBoxTipoSanguineo.getSelectedItem().toString();
         } else {
-            jOptionPaneAvisos.showMessageDialog(this, "Selecione um tipo sanguíneo!", "Incompleto!", jOptionPaneAvisos.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Selecione um tipo sanguíneo!", "Incompleto!", JOptionPane.WARNING_MESSAGE);
             return;
         }
         //Restante
@@ -341,31 +340,31 @@ public class Perfil extends javax.swing.JFrame {
         senha = new String(jPasswordFieldSenha.getPassword());
         confirmar = new String(jPasswordFieldConfirmar.getPassword());
         if (senha.length() < 6) {
-            jOptionPaneAvisos.showMessageDialog(this, "Insira uma senha com\n no mínimo 6 caracteres!", "Muito simples!", jOptionPaneAvisos.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Insira uma senha com\n no mínimo 6 caracteres!", "Muito simples!", JOptionPane.WARNING_MESSAGE);
             return;
         } else if (!confirmar.equals(senha)) {
-            jOptionPaneAvisos.showMessageDialog(this, "Senhas não coincidem!", "Erro!", jOptionPaneAvisos.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Senhas não coincidem!", "Erro!", JOptionPane.WARNING_MESSAGE);
             return;
         }
         //Criar usuário
-        Usuario user = new Usuario(nome, telefone, idade, cpf, rg, condicoes_especiais, medicacoes, tipo_sanguineo, senha, convenio, codigo);
+        Usuario new_user = new Usuario(nome, telefone, idade, cpf, rg, condicoes_especiais, medicacoes, tipo_sanguineo, senha, convenio, codigo);
 
         try {
             //Sobreescrever o usuario
             //Para isso, primeiro descobrir sua string inteira
-            String linha = Data.buscar_linha(user.getCpf(), "users.txt");
+            String linha = Data.buscar_linha(new_user.getCpf(), "users.txt");
 
-            String novaLinha = "|*|" + user.getCpf() + "|*|" + user.getSenha() + "|*|" + user.getNome() + "|*|"
-                    + user.getTelefone() + "|*|" + user.getIdade() + "|*|" + user.getTipo_sanguineo() + "|*|";
+            String novaLinha = "|*|" + new_user.getCpf() + "|*|" + new_user.getSenha() + "|*|" + new_user.getNome() + "|*|"
+                    + new_user.getTelefone() + "|*|" + new_user.getIdade() + "|*|" + new_user.getTipo_sanguineo() + "|*|";
 
-            if (user.getRg() == null) {
+            if (new_user.getRg() == null) {
                 novaLinha += "|*|";
             } else {
-                novaLinha += user.getRg() + "|*|";
+                novaLinha += new_user.getRg() + "|*|";
             }
 
-            novaLinha += user.getCondicoes_especiais() + "|*|" + user.getMedicacoes_uso_continuo() + "|*|"
-                    + user.getConvenio_Medico() + "|*|" + user.getCodigo_Convenio() + "|*|\n";
+            novaLinha += new_user.getCondicoes_especiais() + "|*|" + new_user.getMedicacoes_uso_continuo() + "|*|"
+                    + new_user.getConvenio_Medico() + "|*|" + new_user.getCodigo_Convenio() + "|*|\n";
 
             //Trocar linha pelo novo usuario
             Data.replaceLinha(new File("users.txt"), linha, novaLinha);
@@ -373,11 +372,12 @@ public class Perfil extends javax.swing.JFrame {
             Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        jOptionPaneAvisos.showMessageDialog(this, "Alteraçao realizada com sucesso!", "Completo!", jOptionPaneAvisos.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Alteraçao realizada com sucesso!", "Completo!", JOptionPane.INFORMATION_MESSAGE);
 
         this.dispose();
+        Menu meni = new Menu();
         try {
-            meni.refresh_user();
+            meni.iniciar(new_user);
         } catch (IOException ex) {
             Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -386,11 +386,16 @@ public class Perfil extends javax.swing.JFrame {
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        Menu meni = new Menu();
+        try {
+            meni.iniciar(user);
+        } catch (IOException ex) {
+            Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonVoltarActionPerformed
 
-    public void iniciar(Usuario user, Menu meni) {
+    public void iniciar(Usuario user) {
         this.user = user;
-        this.meni = meni;
         this.setVisible(true);
         jTextFieldNome.setText(user.getNome());
         jFormattedTextFieldTelefone.setText(user.getTelefone());
@@ -432,42 +437,6 @@ public class Perfil extends javax.swing.JFrame {
         jPasswordFieldSenha.setText(user.getSenha());
         jPasswordFieldConfirmar.setText(user.getSenha());
     }
-
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Perfil().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSalvar;
