@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 public class Perfil extends javax.swing.JFrame {
 
     Usuario user;
+    Boolean checkbox;
 
     /**
      * Creates new form Cadastro
@@ -27,6 +28,7 @@ public class Perfil extends javax.swing.JFrame {
     public Perfil() {
         initComponents();
         this.user = new Usuario();
+        this.checkbox = false;
     }
 
     /**
@@ -38,7 +40,14 @@ public class Perfil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jOptionPaneAvisos = new javax.swing.JOptionPane();
+        jFrameExcluir = new javax.swing.JFrame();
+        jLabel15 = new javax.swing.JLabel();
+        jButtonVoltarX = new javax.swing.JButton();
+        jButtonExcluirX = new javax.swing.JButton();
+        jCheckBoxX = new javax.swing.JCheckBox();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jPasswordFieldX = new javax.swing.JPasswordField();
         jLabelCadastro = new javax.swing.JLabel();
         jLabelNome = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -67,6 +76,77 @@ public class Perfil extends javax.swing.JFrame {
         jComboBoxTipoSanguineo = new javax.swing.JComboBox<>();
         jButtonVoltar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
+
+        jFrameExcluir.setLocation(new java.awt.Point(0, 0));
+        jFrameExcluir.setMinimumSize(new java.awt.Dimension(145, 230));
+        jFrameExcluir.setPreferredSize(new java.awt.Dimension(145, 230));
+        jFrameExcluir.setResizable(false);
+
+        jLabel15.setText("sua conta?");
+
+        jButtonVoltarX.setText("<-");
+        jButtonVoltarX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltarXActionPerformed(evt);
+            }
+        });
+
+        jButtonExcluirX.setText("Excluir");
+        jButtonExcluirX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirXActionPerformed(evt);
+            }
+        });
+
+        jCheckBoxX.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jCheckBoxX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxXActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Deseja mesmo excluir");
+
+        jLabel17.setText("Digite sua senha:");
+
+        javax.swing.GroupLayout jFrameExcluirLayout = new javax.swing.GroupLayout(jFrameExcluir.getContentPane());
+        jFrameExcluir.getContentPane().setLayout(jFrameExcluirLayout);
+        jFrameExcluirLayout.setHorizontalGroup(
+            jFrameExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrameExcluirLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jFrameExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonExcluirX)
+                    .addGroup(jFrameExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jFrameExcluirLayout.createSequentialGroup()
+                            .addComponent(jLabel15)
+                            .addGap(18, 18, 18)
+                            .addComponent(jCheckBoxX))
+                        .addComponent(jLabel17)
+                        .addComponent(jPasswordFieldX)
+                        .addComponent(jButtonVoltarX)))
+                .addContainerGap())
+        );
+        jFrameExcluirLayout.setVerticalGroup(
+            jFrameExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameExcluirLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtonVoltarX)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jFrameExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBoxX)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordFieldX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonExcluirX)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -200,7 +280,7 @@ public class Perfil extends javax.swing.JFrame {
                                         .addComponent(jLabel3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 40, Short.MAX_VALUE))
+                                .addGap(0, 30, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
@@ -209,9 +289,7 @@ public class Perfil extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPasswordFieldSenha)
                                     .addComponent(jPasswordFieldConfirmar)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelCadastro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabelCadastro)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonVoltar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -412,8 +490,27 @@ public class Perfil extends javax.swing.JFrame {
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
         // TODO add your handling code here:
+        jFrameExcluir.setLocationRelativeTo(null);
+        jFrameExcluir.setVisible(true);
+        
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
+
+    private void jButtonVoltarXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarXActionPerformed
+        // TODO add your handling code here:
+        jPasswordFieldX.setText("");
+        jCheckBoxX.setSelected(false);
+        jFrameExcluir.dispose();
+    }//GEN-LAST:event_jButtonVoltarXActionPerformed
+
+    private void jButtonExcluirXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirXActionPerformed
+        // TODO add your handling code here:
         String linha = "";
         String linha_nova = "";
+        String senha = new String(jPasswordFieldX.getPassword());
+        if(!senha.equals(this.user.getSenha()) || !checkbox){
+            jFrameExcluir.dispose();
+            return;
+        }        
         //Apagar de users.txt
         try {
             linha = Data.buscar_linha(this.user.getCpf(), "users.txt");
@@ -431,10 +528,16 @@ public class Perfil extends javax.swing.JFrame {
         Data.trocar_linha(new File("ce.txt"), linha, linha_nova);
         
         //deslogar
+        jFrameExcluir.dispose();
         this.dispose();
         String a[] = {};
         Login.main(a);
-    }//GEN-LAST:event_jButtonExcluirActionPerformed
+    }//GEN-LAST:event_jButtonExcluirXActionPerformed
+
+    private void jCheckBoxXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxXActionPerformed
+        // TODO add your handling code here:
+        this.checkbox = jCheckBoxX.isSelected();
+    }//GEN-LAST:event_jCheckBoxXActionPerformed
 
     public void iniciar(Usuario user) {
         this.user = user;
@@ -482,17 +585,24 @@ public class Perfil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonExcluir;
+    private javax.swing.JButton jButtonExcluirX;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JButton jButtonVoltar;
+    private javax.swing.JButton jButtonVoltarX;
+    private javax.swing.JCheckBox jCheckBoxX;
     private javax.swing.JComboBox<String> jComboBoxTipoSanguineo;
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
     private javax.swing.JFormattedTextField jFormattedTextFieldIdade;
     private javax.swing.JFormattedTextField jFormattedTextFieldRG;
     private javax.swing.JFormattedTextField jFormattedTextFieldTelefone;
+    private javax.swing.JFrame jFrameExcluir;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -502,9 +612,9 @@ public class Perfil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelCadastro;
     private javax.swing.JLabel jLabelNome;
-    private javax.swing.JOptionPane jOptionPaneAvisos;
     private javax.swing.JPasswordField jPasswordFieldConfirmar;
     private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JPasswordField jPasswordFieldX;
     private javax.swing.JTextField jTextFieldCodigoConvenio;
     private javax.swing.JTextField jTextFieldCondicoesEspeciais;
     private javax.swing.JTextField jTextFieldConvenio;

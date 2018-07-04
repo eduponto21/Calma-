@@ -94,7 +94,7 @@
               <Component id="jButtonBombeiros" min="-2" pref="93" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Component id="jButtonSAMU" min="-2" pref="93" max="-2" attributes="0"/>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Component id="jButtonChamarContatoEmergencia" min="-2" pref="93" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
