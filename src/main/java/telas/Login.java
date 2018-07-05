@@ -5,12 +5,16 @@
  */
 package telas;
 
+import com.jgoodies.looks.plastic.Plastic3DLookAndFeel;
+import com.jgoodies.looks.plastic.PlasticLookAndFeel;
+import com.jgoodies.looks.plastic.theme.DarkStar;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import processos.Data;
 import entidades.Usuario;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -139,7 +143,7 @@ public class Login extends javax.swing.JFrame {
         String cpf = jFormattedTextFieldCPF.getText();
         String senha = new String(jPasswordFieldSenha.getPassword());
         Usuario user = new Usuario();
-        
+
         //Procura usuário
         try {
             user = Data.buscar_usuario(cpf);
@@ -147,11 +151,11 @@ public class Login extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
         //Se senha for inválida ou usuário não encontrado
-        if(user == null || !senha.equals(user.getSenha())){
+        if (user == null || !senha.equals(user.getSenha())) {
             jOptionPaneInvalido.showMessageDialog(this, "CPF e/ou Senha inválidos!", "Erro!", jOptionPaneInvalido.WARNING_MESSAGE);
             jFormattedTextFieldCPF.setText("");
             jPasswordFieldSenha.setText("");
-        }else{
+        } else {
             //Se senha estiver correta
             Menu meni = new Menu();
             try {
@@ -162,15 +166,18 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
         }
 
-        
+
     }//GEN-LAST:event_jButtonIrActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws UnsupportedLookAndFeelException {
         UIManager.LookAndFeelInfo[] looks = UIManager.getInstalledLookAndFeels();
-        
+        for (int i = 0; i < looks.length; i++) {
+            System.out.println("telas.Login.main()\n" + looks[i].getName());
+        }
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -193,6 +200,10 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+
+        PlasticLookAndFeel.setPlasticTheme(new DarkStar());
+        UIManager.setLookAndFeel(new Plastic3DLookAndFeel());
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
