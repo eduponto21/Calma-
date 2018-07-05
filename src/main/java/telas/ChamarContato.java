@@ -20,6 +20,7 @@ public class ChamarContato extends javax.swing.JFrame {
      */
     public ChamarContato() {
         initComponents();
+        user = new Usuario();
     }
 
     /**
@@ -63,10 +64,25 @@ public class ChamarContato extends javax.swing.JFrame {
         });
 
         jButtonContatoDois.setText("-->");
+        jButtonContatoDois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonContatoDoisActionPerformed(evt);
+            }
+        });
 
         jButtonContatoTres.setText("-->");
+        jButtonContatoTres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonContatoTresActionPerformed(evt);
+            }
+        });
 
         jButtonContatoQuatro.setText("-->");
+        jButtonContatoQuatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonContatoQuatroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,7 +91,7 @@ public class ChamarContato extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelContatoQuatro, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                    .addComponent(jLabelContatoQuatro, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                     .addComponent(jLabelContatoTres, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelContatoDois, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelContatoUm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -106,7 +122,7 @@ public class ChamarContato extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelContatoQuatro)
                     .addComponent(jButtonContatoQuatro))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -115,11 +131,37 @@ public class ChamarContato extends javax.swing.JFrame {
 
     private void jButtonContatoUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoUmActionPerformed
         // TODO add your handling code here:
+        EscolherChamada ec = new EscolherChamada();
+        ec.iniciar(user);
+        this.dispose();
     }//GEN-LAST:event_jButtonContatoUmActionPerformed
+
+    private void jButtonContatoDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoDoisActionPerformed
+        // TODO add your handling code here:
+        EscolherChamada ec = new EscolherChamada();
+        ec.iniciar(user);
+        this.dispose();
+    }//GEN-LAST:event_jButtonContatoDoisActionPerformed
+
+    private void jButtonContatoTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoTresActionPerformed
+        // TODO add your handling code here:
+        EscolherChamada ec = new EscolherChamada();
+        ec.iniciar(user);
+        this.dispose();
+    }//GEN-LAST:event_jButtonContatoTresActionPerformed
+
+    private void jButtonContatoQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContatoQuatroActionPerformed
+        // TODO add your handling code here:
+        EscolherChamada ec = new EscolherChamada();
+        ec.iniciar(user);
+        this.dispose();
+    }//GEN-LAST:event_jButtonContatoQuatroActionPerformed
 
     public void iniciar(Usuario user){
         this.user = user;
         this.setVisible(true);
+//        System.out.println("telas.ChamarContato.iniciar()\n" 
+//                + this.user.getContato_um().getNome());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -85,14 +85,9 @@
                       <Component id="jToggleButtonChamarContato" min="-2" pref="202" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jToggleButtonChamarSAMU" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
-                          <Component id="jToggleButtonChamarPolicia" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
-                          <Component id="jToggleButtonChamarBombeiro" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="jToggleButtonChamarSAMU" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
+                  <Component id="jToggleButtonChamarPolicia" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
+                  <Component id="jToggleButtonChamarBombeiro" alignment="1" min="-2" pref="202" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -109,7 +104,7 @@
               <Component id="jToggleButtonChamarSAMU" min="-2" pref="80" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="jToggleButtonChamarContato" min="-2" pref="80" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -136,6 +131,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="SAMU"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButtonChamarSAMUActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButtonChamarBombeiro">
       <Properties>
@@ -144,6 +142,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Bombeiro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButtonChamarBombeiroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButtonChamarPolicia">
       <Properties>
@@ -152,6 +153,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Policia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButtonChamarPoliciaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

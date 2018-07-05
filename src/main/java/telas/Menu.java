@@ -68,12 +68,27 @@ public class Menu extends javax.swing.JFrame {
 
         jToggleButtonChamarSAMU.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jToggleButtonChamarSAMU.setText("SAMU");
+        jToggleButtonChamarSAMU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonChamarSAMUActionPerformed(evt);
+            }
+        });
 
         jToggleButtonChamarBombeiro.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jToggleButtonChamarBombeiro.setText("Bombeiro");
+        jToggleButtonChamarBombeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonChamarBombeiroActionPerformed(evt);
+            }
+        });
 
         jToggleButtonChamarPolicia.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jToggleButtonChamarPolicia.setText("Policia");
+        jToggleButtonChamarPolicia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonChamarPoliciaActionPerformed(evt);
+            }
+        });
 
         jMenuConfiguracoes.setText("Configurações");
 
@@ -121,12 +136,9 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addComponent(jToggleButtonChamarContato, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jToggleButtonChamarSAMU, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButtonChamarPolicia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jToggleButtonChamarBombeiro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jToggleButtonChamarSAMU, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButtonChamarPolicia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButtonChamarBombeiro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -140,7 +152,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jToggleButtonChamarSAMU, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jToggleButtonChamarContato, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addContainerGap())
         );
 
         pack();
@@ -176,6 +188,27 @@ public class Menu extends javax.swing.JFrame {
             cc.dispose();
         }
     }//GEN-LAST:event_jToggleButtonChamarContatoActionPerformed
+
+    private void jToggleButtonChamarPoliciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonChamarPoliciaActionPerformed
+        // TODO add your handling code here:
+        EscolherChamada ec = new EscolherChamada();
+        ec.iniciar(user);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButtonChamarPoliciaActionPerformed
+
+    private void jToggleButtonChamarBombeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonChamarBombeiroActionPerformed
+        // TODO add your handling code here:
+        EscolherChamada ec = new EscolherChamada();
+        ec.iniciar(user);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButtonChamarBombeiroActionPerformed
+
+    private void jToggleButtonChamarSAMUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonChamarSAMUActionPerformed
+        // TODO add your handling code here:
+        EscolherChamada ec = new EscolherChamada();
+        ec.iniciar(user);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButtonChamarSAMUActionPerformed
 
     public void iniciar(Usuario user) throws IOException{
         this.user = Data.buscar_usuario(user.getCpf());
