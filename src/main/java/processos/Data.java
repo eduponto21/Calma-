@@ -110,7 +110,6 @@ public class Data {
     }
 
     public static void trocar_linha(File f, String linhaAlterar, String linhaAlterada) {
-        System.out.println("processos.Data.trocar_linha()\n" + linhaAlterar + "\n" + linhaAlterada);
         File nf = new File("temporario.tmp");
         FileWriter fw = null;
         Scanner s = null;

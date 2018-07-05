@@ -14,6 +14,7 @@ import entidades.Usuario;
 public class ChamarContato extends javax.swing.JFrame {
     
     Usuario user;
+    Menu meni;
 
     /**
      * Creates new form ChamarContato
@@ -42,6 +43,7 @@ public class ChamarContato extends javax.swing.JFrame {
         jButtonContatoQuatro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calma! - Escolher Contato");
         setResizable(false);
 
         jLabelContatoUm.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -133,6 +135,7 @@ public class ChamarContato extends javax.swing.JFrame {
         // TODO add your handling code here:
         EscolherChamada ec = new EscolherChamada();
         ec.iniciar(user);
+        this.meni.dispose();
         this.dispose();
     }//GEN-LAST:event_jButtonContatoUmActionPerformed
 
@@ -140,6 +143,7 @@ public class ChamarContato extends javax.swing.JFrame {
         // TODO add your handling code here:
         EscolherChamada ec = new EscolherChamada();
         ec.iniciar(user);
+        this.meni.dispose();
         this.dispose();
     }//GEN-LAST:event_jButtonContatoDoisActionPerformed
 
@@ -147,6 +151,7 @@ public class ChamarContato extends javax.swing.JFrame {
         // TODO add your handling code here:
         EscolherChamada ec = new EscolherChamada();
         ec.iniciar(user);
+        this.meni.dispose();
         this.dispose();
     }//GEN-LAST:event_jButtonContatoTresActionPerformed
 
@@ -154,11 +159,13 @@ public class ChamarContato extends javax.swing.JFrame {
         // TODO add your handling code here:
         EscolherChamada ec = new EscolherChamada();
         ec.iniciar(user);
+        this.meni.dispose();
         this.dispose();
     }//GEN-LAST:event_jButtonContatoQuatroActionPerformed
 
-    public void iniciar(Usuario user){
+    public void iniciar(Usuario user, Menu meni){
         this.user = user;
+        this.meni = meni;
         this.setVisible(true);
 //        System.out.println("telas.ChamarContato.iniciar()\n" 
 //                + this.user.getContato_um().getNome());

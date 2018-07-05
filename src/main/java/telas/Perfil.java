@@ -79,7 +79,6 @@ public class Perfil extends javax.swing.JFrame {
 
         jFrameExcluir.setLocation(new java.awt.Point(0, 0));
         jFrameExcluir.setMinimumSize(new java.awt.Dimension(145, 230));
-        jFrameExcluir.setPreferredSize(new java.awt.Dimension(145, 230));
         jFrameExcluir.setResizable(false);
 
         jLabel15.setText("sua conta?");
@@ -148,7 +147,8 @@ public class Perfil extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calma! - Perfil");
         setResizable(false);
 
         jLabelCadastro.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -460,11 +460,8 @@ public class Perfil extends javax.swing.JFrame {
                 + new_user.getMedicacoes_uso_continuo() + "|*|"
                 + new_user.getConvenio_Medico() + "|*|" + new_user.getCodigo_Convenio() + "|*|\n";
 
-        System.out.println("telas.Perfil.jButtonSalvarActionPerformed()\n" + linha + "\n" + novaLinha);
         //Trocar linha pelo novo usuario
         Data.trocar_linha(new File("users.txt"), linha, novaLinha);
-
-        JOptionPane.showMessageDialog(this, "Alteraçao realizada com sucesso!", "Completo!", JOptionPane.INFORMATION_MESSAGE);
 
         this.dispose();
         Menu meni = new Menu();
@@ -504,10 +501,10 @@ public class Perfil extends javax.swing.JFrame {
         // TODO add your handling code here:
         String linha = "";
         String linha_nova = "";
-        jCheckBoxX.setSelected(false);
-        jPasswordFieldX.setText("");
         String senha = new String(jPasswordFieldX.getPassword());
         if (!senha.equals(this.user.getSenha()) || !checkbox) {
+            jCheckBoxX.setSelected(false);
+            jPasswordFieldX.setText("");
             jFrameExcluir.dispose();
             return;
         }

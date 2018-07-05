@@ -59,6 +59,7 @@ public class ContatosEmergencia extends javax.swing.JFrame {
         jButtonExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calma! - Contatos de Emergencia");
         setResizable(false);
 
         jButtonContatoUm.setText("Editar");

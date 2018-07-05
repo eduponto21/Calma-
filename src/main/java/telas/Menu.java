@@ -49,6 +49,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItemDesconectar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calma! - Menu");
         setBackground(new java.awt.Color(0, 0, 0));
         setLocation(new java.awt.Point(0, 0));
         setResizable(false);
@@ -181,7 +182,7 @@ public class Menu extends javax.swing.JFrame {
     private void jToggleButtonChamarContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonChamarContatoActionPerformed
         // TODO add your handling code here:
         if(jToggleButtonChamarContato.isSelected()){
-            cc.iniciar(user);
+            cc.iniciar(user, this);
         }else{
             cc.dispose();
         }
