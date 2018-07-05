@@ -149,6 +149,7 @@ public class Perfil extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabelCadastro.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelCadastro.setText("Perfil");
@@ -255,33 +256,6 @@ public class Perfil extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextFieldMedicacoes))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBoxTipoSanguineo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jFormattedTextFieldCPF))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jFormattedTextFieldRG)))
-                                        .addGap(43, 43, 43))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 30, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel12))
@@ -289,10 +263,38 @@ public class Perfil extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPasswordFieldSenha)
                                     .addComponent(jPasswordFieldConfirmar)))
-                            .addComponent(jLabelCadastro)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(jLabel7)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jComboBoxTipoSanguineo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel6)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jFormattedTextFieldCPF))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel5)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addComponent(jFormattedTextFieldRG)))
+                                            .addGap(43, 43, 43))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabelCadastro))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonVoltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(80, 80, 80)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButtonSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -351,7 +353,7 @@ public class Perfil extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jPasswordFieldConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
                 .addComponent(jButtonExcluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -384,7 +386,7 @@ public class Perfil extends javax.swing.JFrame {
             return;
         }
         //Idade
-        if (!jFormattedTextFieldIdade.getText().equals("") && Integer.parseInt(jFormattedTextFieldIdade.getText()) >=12) {
+        if (!jFormattedTextFieldIdade.getText().equals("") && Integer.parseInt(jFormattedTextFieldIdade.getText()) >= 12) {
             idade = Integer.parseInt(jFormattedTextFieldIdade.getText());
         } else if (Integer.parseInt(jFormattedTextFieldIdade.getText()) < 12) {
             JOptionPane.showMessageDialog(this, "Idade insuficiente!", "Incapaz!", JOptionPane.WARNING_MESSAGE);
@@ -395,7 +397,7 @@ public class Perfil extends javax.swing.JFrame {
         }
         //RG
         if (jFormattedTextFieldRG.getText().trim().equals(".   .   -") || jFormattedTextFieldRG.getText().trim().startsWith(".")) {
-            rg = null;
+            rg = "Null";
         } else {
             rg = jFormattedTextFieldRG.getText().trim();
         }
@@ -443,28 +445,24 @@ public class Perfil extends javax.swing.JFrame {
         //Criar usuário
         Usuario new_user = new Usuario(nome, telefone, idade, cpf, rg, condicoes_especiais, medicacoes, tipo_sanguineo, senha, convenio, codigo);
 
+        //Sobreescrever o usuario
+        //Para isso, primeiro descobrir sua string inteira
+        String linha = "";
         try {
-            //Sobreescrever o usuario
-            //Para isso, primeiro descobrir sua string inteira
-            String linha = Data.buscar_linha(new_user.getCpf(), "users.txt");
-
-            String novaLinha = "|*|" + new_user.getCpf() + "|*|" + new_user.getSenha() + "|*|" + new_user.getNome() + "|*|"
-                    + new_user.getTelefone() + "|*|" + new_user.getIdade() + "|*|" + new_user.getTipo_sanguineo() + "|*|";
-
-            if (new_user.getRg() == null) {
-                novaLinha += "|*|";
-            } else {
-                novaLinha += new_user.getRg() + "|*|";
-            }
-
-            novaLinha += new_user.getCondicoes_especiais() + "|*|" + new_user.getMedicacoes_uso_continuo() + "|*|"
-                    + new_user.getConvenio_Medico() + "|*|" + new_user.getCodigo_Convenio() + "|*|\n";
-
-            //Trocar linha pelo novo usuario
-            Data.trocar_linha(new File("users.txt"), linha, novaLinha);
+            linha = Data.buscar_linha(new_user.getCpf(), "users.txt");
         } catch (IOException ex) {
             Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        String novaLinha = "|*|" + new_user.getCpf() + "|*|" + new_user.getSenha() + "|*|" + new_user.getNome() + "|*|"
+                + new_user.getTelefone() + "|*|" + new_user.getIdade() + "|*|" + new_user.getTipo_sanguineo() + "|*|"
+                + new_user.getRg() + "|*|" + new_user.getCondicoes_especiais() + "|*|"
+                + new_user.getMedicacoes_uso_continuo() + "|*|"
+                + new_user.getConvenio_Medico() + "|*|" + new_user.getCodigo_Convenio() + "|*|\n";
+
+        System.out.println("telas.Perfil.jButtonSalvarActionPerformed()\n" + linha + "\n" + novaLinha);
+        //Trocar linha pelo novo usuario
+        Data.trocar_linha(new File("users.txt"), linha, novaLinha);
 
         JOptionPane.showMessageDialog(this, "Alteraçao realizada com sucesso!", "Completo!", JOptionPane.INFORMATION_MESSAGE);
 
@@ -492,7 +490,7 @@ public class Perfil extends javax.swing.JFrame {
         // TODO add your handling code here:
         jFrameExcluir.setLocationRelativeTo(null);
         jFrameExcluir.setVisible(true);
-        
+
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     private void jButtonVoltarXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarXActionPerformed
@@ -506,11 +504,13 @@ public class Perfil extends javax.swing.JFrame {
         // TODO add your handling code here:
         String linha = "";
         String linha_nova = "";
+        jCheckBoxX.setSelected(false);
+        jPasswordFieldX.setText("");
         String senha = new String(jPasswordFieldX.getPassword());
-        if(!senha.equals(this.user.getSenha()) || !checkbox){
+        if (!senha.equals(this.user.getSenha()) || !checkbox) {
             jFrameExcluir.dispose();
             return;
-        }        
+        }
         //Apagar de users.txt
         try {
             linha = Data.buscar_linha(this.user.getCpf(), "users.txt");
@@ -518,7 +518,7 @@ public class Perfil extends javax.swing.JFrame {
             Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
         Data.trocar_linha(new File("users.txt"), linha, linha_nova);
-        
+
         //Apagar de ce.txt
         try {
             linha = Data.buscar_linha(this.user.getCpf(), "ce.txt");
@@ -526,7 +526,7 @@ public class Perfil extends javax.swing.JFrame {
             Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
         Data.trocar_linha(new File("ce.txt"), linha, linha_nova);
-        
+
         //deslogar
         jFrameExcluir.dispose();
         this.dispose();

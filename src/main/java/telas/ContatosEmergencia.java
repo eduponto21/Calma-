@@ -59,6 +59,7 @@ public class ContatosEmergencia extends javax.swing.JFrame {
         jButtonExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jButtonContatoUm.setText("Editar");
         jButtonContatoUm.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +133,7 @@ public class ContatosEmergencia extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jButtonVoltar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(200, 200, 200))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,15 +143,15 @@ public class ContatosEmergencia extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonContatoUm))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldContatoDois, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                        .addComponent(jTextFieldContatoDois)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonContatoDois))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldContatoTres, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                        .addComponent(jTextFieldContatoTres)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonContatoTres))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldContatoQuatro, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                        .addComponent(jTextFieldContatoQuatro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonContatoQuatro))
                     .addGroup(layout.createSequentialGroup()
@@ -163,7 +164,7 @@ public class ContatosEmergencia extends javax.swing.JFrame {
                             .addComponent(jFormattedTextFieldTelefone)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabelContato)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(50, 50, 50)
                         .addComponent(jButtonExcluir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSalvar)))
@@ -204,7 +205,7 @@ public class ContatosEmergencia extends javax.swing.JFrame {
                         .addComponent(jButtonSalvar)
                         .addComponent(jButtonExcluir))
                     .addComponent(jLabelContato))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
                 .addComponent(jButtonVoltar))
         );
 

@@ -110,6 +110,7 @@ public class Data {
     }
 
     public static void trocar_linha(File f, String linhaAlterar, String linhaAlterada) {
+        System.out.println("processos.Data.trocar_linha()\n" + linhaAlterar + "\n" + linhaAlterada);
         File nf = new File("temporario.tmp");
         FileWriter fw = null;
         Scanner s = null;
@@ -119,9 +120,8 @@ public class Data {
 
             while (s.hasNextLine()) {
                 String linha = s.nextLine();
-
                 linha = linha.replace(linhaAlterar, linhaAlterada);
-
+                
                 try {
                     fw.write(linha + System.getProperty("line.separator"));
                 } catch (IOException e) {
@@ -140,6 +140,6 @@ public class Data {
         }
         f.delete();
         nf.renameTo(f);
+        
     }
-
 }

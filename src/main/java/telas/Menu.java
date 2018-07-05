@@ -6,8 +6,6 @@
 package telas;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import processos.Data;
 import entidades.Usuario;
 
@@ -161,9 +159,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItemEditarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEditarPerfilActionPerformed
         // TODO add your handling code here:
-        this.dispose();
         Perfil perf = new Perfil();
         perf.iniciar(this.user);
+        this.dispose();
     }//GEN-LAST:event_jMenuItemEditarPerfilActionPerformed
 
     private void jMenuItemContatosDeEmergenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemContatosDeEmergenciaActionPerformed

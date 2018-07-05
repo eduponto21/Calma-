@@ -67,6 +67,7 @@ public class Cadastro extends javax.swing.JFrame {
         jButtonVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabelCadastro.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelCadastro.setText("Cadastro");
@@ -187,7 +188,7 @@ public class Cadastro extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(jButtonTermosUso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                                .addGap(13, 13, 13)
                                 .addComponent(jCheckBoxTermosUso))
                             .addComponent(jPasswordFieldConfirmar)))
                     .addGroup(layout.createSequentialGroup()
@@ -221,7 +222,7 @@ public class Cadastro extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jButtonVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(144, 144, 144)
                 .addComponent(jButtonCadastrar))
         );
         layout.setVerticalGroup(

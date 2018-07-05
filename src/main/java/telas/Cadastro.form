@@ -7,6 +7,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -66,7 +67,7 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Component id="jButtonTermosUso" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Component id="jCheckBoxTermosUso" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPasswordFieldConfirmar" max="32767" attributes="0"/>
@@ -114,7 +115,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <Component id="jButtonVoltar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
               <Component id="jButtonCadastrar" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
