@@ -18,6 +18,7 @@ import entidades.Usuario;
 public class Menu extends javax.swing.JFrame {
     
     Usuario user;
+    ChamarContato cc;
 
     /**
      * Creates new form Inicio
@@ -25,6 +26,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         this.user = new Usuario();
+        this.cc = new ChamarContato();
     }
     
     /**
@@ -36,11 +38,10 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLayeredPane1 = new javax.swing.JLayeredPane();
-        jButtonChamarContato = new javax.swing.JButton();
-        jButtonChamarSAMU = new javax.swing.JButton();
-        jButtonChamarBombeiro = new javax.swing.JButton();
-        jButtonChamarPolicia = new javax.swing.JButton();
+        jToggleButtonChamarContato = new javax.swing.JToggleButton();
+        jToggleButtonChamarSAMU = new javax.swing.JToggleButton();
+        jToggleButtonChamarBombeiro = new javax.swing.JToggleButton();
+        jToggleButtonChamarPolicia = new javax.swing.JToggleButton();
         jMenuBarConfiguracoes = new javax.swing.JMenuBar();
         jMenuConfiguracoes = new javax.swing.JMenu();
         jMenuItemEditarPerfil = new javax.swing.JMenuItem();
@@ -51,53 +52,28 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
+        setLocation(new java.awt.Point(0, 0));
+        setResizable(false);
 
-        jButtonChamarContato.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonChamarContato.setText("Contato de Emergência");
-        jButtonChamarContato.addActionListener(new java.awt.event.ActionListener() {
+        jToggleButtonChamarContato.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jToggleButtonChamarContato.setText("Contato de Emergencia");
+        jToggleButtonChamarContato.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        jToggleButtonChamarContato.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jToggleButtonChamarContato.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButtonChamarContato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonChamarContatoActionPerformed(evt);
+                jToggleButtonChamarContatoActionPerformed(evt);
             }
         });
 
-        jButtonChamarSAMU.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButtonChamarSAMU.setText("SAMU");
+        jToggleButtonChamarSAMU.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jToggleButtonChamarSAMU.setText("SAMU");
 
-        jButtonChamarBombeiro.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButtonChamarBombeiro.setText("Bombeiro");
+        jToggleButtonChamarBombeiro.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jToggleButtonChamarBombeiro.setText("Bombeiro");
 
-        jButtonChamarPolicia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButtonChamarPolicia.setText("Policia");
-
-        jLayeredPane1.setLayer(jButtonChamarContato, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonChamarSAMU, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonChamarBombeiro, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonChamarPolicia, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
-        jLayeredPane1.setLayout(jLayeredPane1Layout);
-        jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonChamarContato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonChamarSAMU, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonChamarBombeiro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonChamarPolicia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addComponent(jButtonChamarPolicia, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonChamarBombeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonChamarSAMU, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonChamarContato, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jToggleButtonChamarPolicia.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jToggleButtonChamarPolicia.setText("Policia");
 
         jMenuConfiguracoes.setText("Configurações");
 
@@ -139,13 +115,32 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jToggleButtonChamarContato, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jToggleButtonChamarSAMU, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jToggleButtonChamarPolicia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jToggleButtonChamarBombeiro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(jToggleButtonChamarPolicia, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButtonChamarBombeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButtonChamarSAMU, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButtonChamarContato, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
         );
 
         pack();
@@ -173,9 +168,14 @@ public class Menu extends javax.swing.JFrame {
         Login.main(a);
     }//GEN-LAST:event_jMenuItemDesconectarActionPerformed
 
-    private void jButtonChamarContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChamarContatoActionPerformed
+    private void jToggleButtonChamarContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonChamarContatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonChamarContatoActionPerformed
+        if(jToggleButtonChamarContato.isSelected()){
+            cc.iniciar(user);
+        }else{
+            cc.dispose();
+        }
+    }//GEN-LAST:event_jToggleButtonChamarContatoActionPerformed
 
     public void iniciar(Usuario user) throws IOException{
         this.user = Data.buscar_usuario(user.getCpf());
@@ -183,11 +183,6 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonChamarBombeiro;
-    private javax.swing.JButton jButtonChamarContato;
-    private javax.swing.JButton jButtonChamarPolicia;
-    private javax.swing.JButton jButtonChamarSAMU;
-    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenuBar jMenuBarConfiguracoes;
     private javax.swing.JMenu jMenuConfiguracoes;
     private javax.swing.JMenuItem jMenuItemContatosDeEmergencia;
@@ -195,5 +190,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemEditarPerfil;
     private javax.swing.JMenuItem jMenuItemMensagensPreProgramadas;
     private javax.swing.JMenuItem jMenuItemSuporte;
+    private javax.swing.JToggleButton jToggleButtonChamarBombeiro;
+    private javax.swing.JToggleButton jToggleButtonChamarContato;
+    private javax.swing.JToggleButton jToggleButtonChamarPolicia;
+    private javax.swing.JToggleButton jToggleButtonChamarSAMU;
     // End of variables declaration//GEN-END:variables
 }

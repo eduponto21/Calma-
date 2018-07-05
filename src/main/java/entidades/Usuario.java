@@ -49,6 +49,10 @@ public class Usuario extends Pessoa {
         this.senha = senha;
         this.convenio_medico = convenio_medico;
         this.codigo_convenio = codigo;
+        this.contato_um = new Pessoa();
+        this.contato_dois = new Pessoa();
+        this.contato_tres = new Pessoa();
+        this.contato_quatro = new Pessoa();
     }
 
     public int getIdade() {

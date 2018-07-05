@@ -302,11 +302,30 @@ public class ContatosEmergencia extends javax.swing.JFrame {
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         // TODO add your handling code here:
         String nome = jTextFieldNome.getText();
+        String telefone = jFormattedTextFieldTelefone.getText();
+        String linha = null;
+        Pessoa contato = new Pessoa();
+
         if (nome.equals("")) {
             nome = "Null";
         }
-        String telefone = jFormattedTextFieldTelefone.getText();
-        String linha = null;
+        contato.setNome(nome);
+        contato.setTelefone(telefone);
+        switch (controle) {
+            case 1:
+                this.user.setContato_um(contato);
+                break;
+            case 2:
+                this.user.setContato_dois(contato);
+                break;
+            case 3:
+                this.user.setContato_tres(contato);
+                break;
+            case 4:
+                this.user.setContato_quatro(contato);
+                break;
+        }
+
         try {
             linha = Data.buscar_linha(user.getCpf(), "ce.txt");
         } catch (IOException ex) {
